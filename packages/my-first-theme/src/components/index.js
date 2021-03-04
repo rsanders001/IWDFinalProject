@@ -26,11 +26,19 @@ const Root = ({ state, actions }) => {
             />
             <Header isPostType={data.isPostType} isPage={data.isPage}>
                 <HeaderContent>
-                    <h1>Frontity Workshop</h1>
-                    <p>Current URL: {state.router.link}</p>
+                    <h1>Hello Frontity</h1>
+                    {
+                        state.theme.isUrlVisible ? (
+                            <>
+                                Current URL: {state.router.link}{" "}
+                                <Button onClick={actions.theme.toggleUrl}>&#x3c; Hide URL</Button>
+                            </>
+                        ) : (
+                            <Button onClick={actions.theme.toggleUrl}>Show URL &#x3e;</Button>
+                        )
+                    }
                     <Menu>
                         <Link link="/">Home</Link>
-                        <Link link="/page/2">More posts</Link>
                         <Link link="/about-us">About Us</Link>
                     </Menu>
                 </HeaderContent>
@@ -44,6 +52,7 @@ const Root = ({ state, actions }) => {
             </Main>
         </>
     )
+
 }
 
 export default connect(Root)
@@ -87,5 +96,15 @@ const Menu = styled.nav`
     margin-right: 1em;
     color: steelblue;
     text-decoration: none;
+  }
+`
+const Button = styled.button`
+  background: transparent;
+  border: none;
+  color: #aaa;
+
+  :hover {
+    cursor: pointer;
+    color: #888;
   }
 `
