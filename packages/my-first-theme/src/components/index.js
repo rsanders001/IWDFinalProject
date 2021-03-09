@@ -38,7 +38,7 @@ const Root = ({ state, actions }) => {
             />
             <Header isPostType={data.isPostType} isPage={data.isPage}>
                 <HeaderContent>
-                    <h1>Hello Frontity</h1>
+                    <h1>Rick Riordan</h1>
                     {
                         state.theme.isUrlVisible ? (
                             <>
@@ -51,8 +51,10 @@ const Root = ({ state, actions }) => {
                     }
                     <Menu>
                         <Link link="/">Home</Link>
-                        <Link link="/destinations">Destinations</Link>
-                        <Link link="/about-us">About Us</Link>
+                        <Link link="/book">Books</Link>
+                        <Link link="/review">Reviews</Link>
+                        <Link link="/about">About</Link>
+                        <Link link="/contact">Contact</Link>
                     </Menu>
                 </HeaderContent>
             </Header>
@@ -61,8 +63,8 @@ const Root = ({ state, actions }) => {
                 <Loading when={data.isFetching} />
                 <List when={data.isArchive} />
                 <Page when={data.isPage} />
-                <Post when={data.isPost} />
-                <Page when={data.isDestinations} />
+                <Page when={data.isBook} />
+                <Page when={data.isReview} />
                 <Error when={data.isError} />
             </Switch>
             </Main>
@@ -73,10 +75,9 @@ const Root = ({ state, actions }) => {
 
 export default connect(Root)
 const Header = styled.header`
-  background-color: #E5EDEE;
-  border-width: 0 0 8px 0;
-  border-style: solid;
-  border-color: ${ props => props.isPostType ? ( props.isPage ? 'lightsteelblue' : 'lightseagreen' ) : 'maroon'};
+  background-color: white;
+
+
 `
 const HeaderContent = styled.div`
   max-width: 800px;
@@ -110,9 +111,16 @@ const Menu = styled.nav`
   margin-top: 1em;
   & > a {
     margin-right: 1em;
-    color: steelblue;
+    padding: 25px;
+    color: white;
     text-decoration: none;
+        :hover {
+        cursor: pointer;
+        background-color: orange;
+      }
   }
+  background-color: #3a3b3c;
+ 
 `
 const Button = styled.button`
   background: transparent;

@@ -3,13 +3,6 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
-      "postTypes": [
-        {
-          type: "destinations",
-          endpoint: "destinations",
-          archive: "/destinations"
-        }
-        ],
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -23,7 +16,19 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://rsanders9.bitlampsites.com/wpd/FinalProject/wordpress",
+          "postTypes": [
+            {
+              type: "book",
+              endpoint: "book",
+              archive: "/book"
+            },
+            {
+              type: "review",
+              endpoint: "review",
+              archive: "/review"
+            }
+          ],
         }
       }
     },
