@@ -3,6 +3,13 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
+      "postTypes": [
+        {
+          type: "destinations",
+          endpoint: "destinations",
+          archive: "/destinations"
+        }
+        ],
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -23,6 +30,7 @@ const settings = {
     "@frontity/tiny-router",
     "@frontity/html2react"
   ]
+
 };
 
 export default settings;
