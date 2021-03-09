@@ -1,4 +1,5 @@
 import Root from "./components"
+import link from "@frontity/html2react/processors/link";
 
 const myFirstTheme = {
   name: "my-first-theme",
@@ -16,6 +17,11 @@ const myFirstTheme = {
         state.theme.isUrlVisible = !state.theme.isUrlVisible
       },
     },
+  },
+  libraries: {
+    html2react: {
+      processors: [link]
+    }
   },
 }
 
