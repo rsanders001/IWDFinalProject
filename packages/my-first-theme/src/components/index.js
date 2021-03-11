@@ -5,6 +5,8 @@ import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Book from "./book"
+import Review from "./review"
 import Loading from "./loading"
 import Error from "./error"
 
@@ -63,8 +65,8 @@ const Root = ({ state, actions }) => {
                 <Loading when={data.isFetching} />
                 <List when={data.isArchive} />
                 <Page when={data.isPage} />
-                <Page when={data.isBook} />
-                <Page when={data.isReview} />
+                <Book when={data.isBook} />
+                <Review when={data.isReview} />
                 <Error when={data.isError} />
             </Switch>
             </Main>
@@ -90,7 +92,9 @@ const Main = styled.main`
   margin: auto;
 
   img {
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
   h2 {
     margin: 0.5em 0;
@@ -132,3 +136,5 @@ const Button = styled.button`
     color: #888;
   }
 `
+
+

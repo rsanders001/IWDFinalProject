@@ -11,6 +11,7 @@ const List = ({ state, actions }) => {
                 const post = state.source[item.type][item.id]
                 return (
                     <Link key={item.id} link={post.link}>
+
                         {post.title.rendered}
                     </Link>
                 )
