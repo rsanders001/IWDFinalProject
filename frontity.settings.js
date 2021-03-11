@@ -16,7 +16,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://rsanders9.bitlampsites.com/wpd/finalproject/wordpress",
+          "url": "https://rsanders9.bitlampsites.com/wpd/finalproject/wordpress/",
+          "homepage": "/home",
           "postTypes": [
             {
               type: "book",
